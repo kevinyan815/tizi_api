@@ -1,0 +1,31 @@
+/* 用户 开始 */
+.layout{width: 600px;margin: 0px auto;}
+.user_header{margin: 10px auto;}
+.user_header h1{background: url(../../image/oauth/user_header.png) no-repeat;width: 122px;height: 52px;margin-left: 10px;}
+.userMain{border: 1px solid #ddd;background: #fff;padding: 20px;}
+.userMain h2{padding-bottom:8px;border-bottom: 2px solid #6c9;font-weight: normal;font-size: 14px;}
+
+.userMain .userBox{text-align: center;padding-top: 25px;}
+.userMain .userBox h3{margin: 10px 0px;font-size: 14px;font-weight: normal;line-height: 14px;}
+.userMain .userBox p{color:#959595;}
+.userMain .userBox img{margin: 0 auto;}
+.userMain .userBox .userOther{padding: 0px 18px;margin-top: 10px;}
+.userMain .userBox .textLine{margin-bottom: 15px;}
+.userMain .userBox .textLine input{width: 235px;height: 32px;line-height: 32px;padding-left: 5px;border: 1px solid #ccc;}
+.userMain .userBox .loginBox{margin-bottom: 30px;}
+.userMain .userBox .loginBox input{padding: 0px 100px;height: 39px;line-height: 39px;font-size: 18px;}
+
+.oauth .userBox .indexLoginForm{width:228px;margin:20px auto;}
+.oauth .indexLoginForm .ValidformInfo{z-index: 100}
+.oauth .indexLoginForm li{margin-bottom: 15px;*margin-bottom: 7px;}
+.oauth .indexLoginForm .username{ background:url(../../image/oauth/name.png) no-repeat scroll 5px center #fff;_background:url(../../image/oauth/name8.png) no-repeat scroll 5px center #fff;font-size: 12px; width: 200px;padding-left:20px;line-height: 30px;height: 30px;border-color: #cacaca}
+.oauth .indexLoginForm .password{background: url(../../image/oauth/pwd.png) no-repeat scroll 5px center #fff;_background: url(../../image/oauth/password.gif) no-repeat scroll 5px center #fff;font-size: 12px; width: 200px;padding-left:20px;line-height: 30px;height: 30px;border-color: #cacaca}
+.oauth .bottomLogin .submitBtn{width: 228px;padding: 0px;margin: 0px; }
+.oauth .bottomLogin .aReg{display: none;}
+.oauth .remerberPass{display: none}
+.oauth .bottomLogin input.submitBtn{line-height: 25px;}
+.oauth .loginWrapCon .bottomLogin{_position:relative;;}
+.oauth .loginWrapCon .bottomLogin .submitBtn{_position: absolute;_top:0px;_left: 0px;}
+.oauth .oauthLogin{display: none;}
+.oauth .bottomLogin .submitLock{background:#b3b3b3;}
+.oauth .userBox p.text{text-align: center;color:#666;}

@@ -1,0 +1,16 @@
+{extends file='oauth/oauth_base.html'}
+
+{block name=title}授权登录{/block}
+
+{block name=container}
+<div class="layout user_header cf">
+	<h1 class="fl"></h1>
+</div>
+
+{if !isset($user_id) }
+{include file='oauth/login_user_tpl.html'}
+{else}
+{include file='oauth/change_user_tpl.html'}
+{/if}
+
+{/block}

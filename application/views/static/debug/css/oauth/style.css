@@ -1,0 +1,5 @@
+/*加载base.css----包括reset,common.cssSprites,layout,header,footer,button,dialog,valid.css*/
+@import url('../common/base.css');
+/*加载样式*/
+@import url('signin.css');
+/*----------------------------网站具体样式结束----------------------------*/

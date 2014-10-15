@@ -1,0 +1,28 @@
+body{background:#f6f6f6;}
+a {text-decoration:none;color:#333;}
+a:hover {text-decoration:none;color:#f90;}
+.layout:after,.hd:after,.bd:after,.ft:after,.cf:after,.header:after,.wrap:after,.footer:after,.fn-clear:after{content:"";display:table;clear:both}
+.layout,.hd,.bd,.ft,.cf,.header,.wrap,.footer,.fn-clear{*zoom:1}
+.bold{font-weight:bold;}
+.org{color:#f60;}
+.undis{display: none}
+.dis{display:block;}
+.undisIm{display:none!important;}
+.disIm{display:block!important;}
+.fl{ float:left; display:inline;}
+.fr{ float:right; display:inline;}
+.yh{ font-family:"Microsoft Yahei"; font-weight:normal;}
+.posr{ position:relative; *zoom:1;}
+.bgf{ background:#fff;}
+.mt20{ margin-top:20px}
+.border1{border:1px solid lightgrey;}
+.border1 input{border:0px!important;}
+input::-ms-clear{display:none;}
+.aGreen{color:#09AA83;}
+.colorGreen{color:#2A8D6A}
+.colorRed{color: #ff3d3d;}
+.bgGreen{background:#298D6A;}
+.orange{color:#fc0;}
+.l50{ line-height:50px;}
+.cInput{border:1px solid #999;height:38px;line-height:38px;padding:0px 6px;color:#666;font-size: 14px;}
+.csInput{border:1px solid #999;height:26px;line-height: 26px;padding:0 6px;font-size:14px;color: #666;}

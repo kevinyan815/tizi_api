@@ -1,0 +1,31 @@
+<!-- 老用户 开始 -->
+<div class="layout userMain hasLogin">
+	<h2>检测到您已登录梯子网帐号，点击头像授权并登录</h2>
+	<div class="userBox">
+		<a href="{$site_url}oauth/authorize"><img width="100" height="100" align="center" {if $base_avatar}src="{$base_avatar}{$version}"{else}src="{$static_url}{$static_version}image/common/default_avatar.gif"{/if} alt="用户头像"></a>
+		<h3>{$name}</h3>
+		<p><span id="oTime">5</span>秒后自动登录</p>
+		<div>
+			<a class="cBtnSilver userOther" href="javascript:;" title="">使用其它帐号</a>
+		</div>
+	</div>
+</div>
+<!-- 老用户 结束 -->
+
+<script>
+var redirect = '{$site_url}oauth/authorize';
+//倒计时跳转页面
+var start = 5;
+var step = -1;
+function count(){
+	var oTime = document.getElementById("oTime");
+	oTime.innerHTML = start;
+	start += step;
+	if(start <1 ){
+		window.location.href = redirect;
+		return false;
+	}
+	setTimeout("count()",1000);
+}
+window.onload = count;
+</script>

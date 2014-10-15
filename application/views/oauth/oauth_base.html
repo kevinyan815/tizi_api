@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{block name=title}{/block}-梯子网</title>
+<link rel="stylesheet" type="text/css" href="{$static_url}{$static_version}css/oauth/style.css" />
+{block name=stylesheet}{/block}
+</head>
+
+<body>
+{include file='file:[lib]common/tizi_token.html'}
+<div id="tiziModule" module="oauth" class="oauth">
+	{block name=container}{/block}
+</div>
+<!-- js引入开始 -->
+<script type="text/javascript" src="{$static_url}{$static_version}public/sea/2.1.0/sea.js{$version}"></script>
+<script type="text/javascript" src="{$static_url}{$static_version}public/config.js{$version}"></script>
+<!--js引入结束-->
+{block name=script}{/block}
+</body>
+</html>

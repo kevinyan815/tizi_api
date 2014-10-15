@@ -1,0 +1,18 @@
+<!-- 新用户 开始 -->
+<div class="layout userMain notLogin">
+	<h2 class="cf">使用您的梯子网账号访问 <a class="colorGreen" href="{$nahao_url}" target="_blank">那好网</a>，并同时登录梯子网<span class="fr">还没有梯子网帐号？<a class="colorGreen" href="{$login_url}register" target="_blank">立即注册</a></span></h2>
+	<div class="userBox">
+		{include file='file:[lib]common/tizi_login.html' login_redirect=$api_url|cat:"oauth/authorize"}
+		<p class="text">提示：为保障帐号安全，请认准本页URL地址必须以 api.tizi.com 开头</p>
+		<!-- <form class="indexLoginForm" method="post">
+			<div class="textLine"><input type="text" name="username" value="" placeholder="用户名/学号/手机号/邮箱"></div>
+			<div class="textLine"><input type="password" name="password" value="" placeholder="密码"></div>
+			<div class="loginBox">
+				<input class="cBtnNormal" value="登 录" type="submit" id="submit">
+			</div>
+
+		</div>
+		<p>提示：为保障帐号安全，请认准本页URL地址必须以 api.tizi.com 开头</p>
+	</form> -->
+</div>
+<!-- 新用户 结束 -->

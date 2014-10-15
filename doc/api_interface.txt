@@ -1,0 +1,315 @@
+/login/submit/tizi?username=18601357927&password=123123
+1、登录接口
+参数:
+	username:帐号
+	password:密码
+返回值示例:
+	errorcode:true
+	error:''
+说明:
+	errorcode:true 登录成功,false登录失败
+	error:用户登录成功或者失败的相关信息
+
+/send_phone_code?phone=18601357927&session_id=232775d94a65265acb3fe492516bbf81&app=1&code_type=4
+app:
+	1:API_TYPE_TIZI
+	2:API_TYPE_JXT
+	3:API_TYPE_AQ
+code_type:
+	1:CODE_TYPE_REGISTER (注册类型)
+	2:CODE_TYPE_CHANGE_PASSWORD (更改密码类型)
+	3:CODE_TYPE_CHANGE_EMAIL (更换邮箱)
+	4:CODE_TYPE_CHANGE_PHONE (更换手机)
+	5:CODE_TYPE_REGISTER_VERIFY_EMAIL (注册验证邮箱)
+	6:CODE_TYPE_LOGIN_VERIFY_EMAIL (登录验证邮箱)
+2、获取手机验证码接口
+参数:
+　　phone:手机号
+	session_id:用户的标识id
+	app:api类型
+	code_type:用户动作(注册,改密码,改手机号...)
+返回值示例:
+　　errorcode:true
+	error:成功的信息
+说明:
+	errorcode:true 获取手机号成功,false失败
+	error:用户获取手机号成功或者失败的相关信息
+
+
+/check_code?phone=18601357927&code=787269&code_type=4&verify=0
+code_type:
+	1:CODE_TYPE_REGISTER (注册类型)
+	2:CODE_TYPE_CHANGE_PASSWORD (更改密码类型)
+	3:CODE_TYPE_CHANGE_EMAIL (更换邮箱)
+	4:CODE_TYPE_CHANGE_PHONE (更换手机)
+	5:CODE_TYPE_REGISTER_VERIFY_EMAIL (注册验证邮箱)
+	6:CODE_TYPE_LOGIN_VERIFY_EMAIL (登录验证邮箱)
+3、验证手机验证码接口
+参数:
+　　phone:手机号
+	code:手机验证码
+	code_type::(如果传了会验证类型是不是正确,没有传的话不会验证这个参数)
+	verify:是否开启验证(开启则删除缓存)
+返回值示例:
+　　errorcode:true
+	error:成功的信息
+说明:
+　　errorcode:true 验证手机验证码 成功,false失败
+	error:用户验证手机验证码 成功或者失败 的相关信息
+　　
+/student/sign_class?session_id=1e04a62ddf1dd58254fb83b087395b30&app=1&child_id=812800305&class_id=51333I
+4、加入班级接口
+参数:
+	child_id:学生id
+　　class_id:班级编号
+返回值示例:
+	errorcode:1
+	error:返回描述信息
+说明:
+　　errorcode        error
+		1		=>	成功加该班级
+		-1		=>	班级不存在	
+		-2		=>	班级已经解散	
+		-3		=>	该班级已经关闭学生加入	
+		-4		=>	该班级的人数已经达到上限	
+		-5		=>	您已经加入过班级了	
+		-6		=>	班级不存在
+		-7		=>	父母没有操作权限(父母不能操作此孩子id)
+
+/student/dropout_class?session_id=1e04a62ddf1dd58254fb83b087395b30&app=1&child_id=812800305
+app:
+	1:API_TYPE_TIZI
+	2:API_TYPE_JXT
+	3:API_TYPE_AQ
+5、退出班级接口
+参数:
+	session_id:父母的session_id
+	child_id:学生id
+返回值示例:
+	errorcode:1
+	error:退出成功
+说明:
+　　errorcode:	1				-1					-2		-3
+	error:		退出成功		该处理已经更新		系统忙		父母没有权限
+
+/user/change_child_name?session_id=1e04a62ddf1dd58254fb83b087395b30&app=1&child_id=812800305&urname=ss123
+app:
+	1:API_TYPE_TIZI
+	2:API_TYPE_JXT
+	3:API_TYPE_AQ
+6、修改孩子名字接口
+参数:
+	session_id:家长session_id
+    child_id:孩子id	
+　　child_name:孩子名字
+返回值示例:
+	errorcode:true
+	error:修改孩子名字成功
+说明:
+	errorcode:true,false
+	error:true:修改成功 false:修改失败
+
+/user/change_name?session_id=232775d94a65265acb3fe492516bbf81&app=1&urname=ss123
+app:
+	1:API_TYPE_TIZI
+	2:API_TYPE_JXT
+	3:API_TYPE_AQ
+7、修改自己姓名
+参数:
+　　session_id:用户id
+　　urname:用户要修改成的名字
+返回值示例:
+	errorcode: true
+	error:提示信息
+说明:
+　　errorcode:true修改成功 false修改失败 error:修改成功或者失败后的提示信息
+
+/user/change_password?session_id=232775d94a65265acb3fe492516bbf81&app=1&password=123123&new=123123&confirm=123123
+app:
+	1:API_TYPE_TIZI
+	2:API_TYPE_JXT
+	3:API_TYPE_AQ
+8、修改密码接口
+参数:
+　　session_id:家长id(用户id)
+　　password:旧密码
+　　new:新密码
+　　confirm:确认密码
+返回值示例:
+	errorcode: true
+	error:提示信息
+说明:
+	errorcode:true修改成功 false修改失败 error:修改成功或者失败后的提示信息
+
+/user/change_phone?session_id=232775d94a65265acb3fe492516bbf81&app=1&phone=18601357927&code=855111
+app:
+	1:API_TYPE_TIZI
+	2:API_TYPE_JXT
+	3:API_TYPE_AQ
+9、修改手机接口
+接口:~/user/modify_phone
+参数:
+	session_id:用户id
+　　phone:新手机
+	code:验证码
+返回值示例:
+	errorcode: true
+	error:提示信息
+说明:
+	errorcode:true修改成功 false修改失败 
+	error:修改成功或者失败后的提示信息
+
+
+/oral_daily/stu_video_list?grade=1&page_num=1
+10.每日口语视频接口
+参数:
+	grade:年级
+	page_num:第几页
+返回值事例:
+	errorcode:true成功,false失败
+	playlist:里面是需要的每日口语数据
+说明:
+	true成功,false失败
+	playlist:里面是需要的每日口语数据
+
+
+/register/submit/tizi?username=2@3.com&password=123123&name=tusiyuan&user_type=2&register_type=1
+11.注册接口
+参数:
+	username:用户登录的帐号
+	password:用户登录的密码（可以加密也可以不加密，建议加密之后传过来）
+	name:用户昵称
+	user_type:用户类型（家长、学生、老师）
+	register_type:注册类型（手机、email、用户名、学号）
+
+返回值事例:
+	errorcode:true成功,false失败
+	error:错误的话有错误信息，正确则为空
+
+
+/login/user_login?username=1054770532@qq.com&password=e0b0616098d16fec3de7b2f12b7ce519&app_type=4
+12.登录接口（刷题）
+	登录方式：
+		用户名+密码+app_type登录
+参数:
+	username:帐号,password:密码
+	app_type:登录的app应用
+		1:API_TYPE_TIZI
+		2:API_TYPE_JXT
+		3:API_TYPE_AQ
+		3:API_TYPE_TIKU
+返回值示例:
+	errorcode:true
+	error:''
+说明:
+	errorcode:true 登录成功,false登录失败
+	error:用户登录成功或者失败的相关信息
+
+13.第三方登录
+session_oauth表判断用户是否存在
+/oauth/callback?open_id=1653158472&platform=2&access_token=2.001CUsnBzyxEbE225981e3fbanpLpB
+参数：
+	open_id
+	platform
+	access_token
+都是第三方回调的参数
+返回值：
+	error：描述信息
+	errorcode： 1=>参数不正确，2=>用户不存在 去注册，3=>用户已经存在 去登陆
+
+注册
+/oauth/register?username=1653158472@126.com&password=&name=ttmm&user_type=2&register_type=1&oauth_id=4
+参数
+	username：邮箱
+	password：留空
+	name：昵称
+	user_type：用户类型
+	register_type：注册类型
+	oauth_id：session_oauth表的主键id 由上面/oauth/callback 返回
+返回值：
+	errorcode：true / false
+	error：描述信息
+	user_info：true时候返回用户的信息 比如user_id
+登录
+/oauth/login?user_id=812805577&app_type=4&name=ttmm123
+参数：
+	user_id：用户id
+	app_type：app类型
+	name：昵称
+返回值：
+	errorcode:true
+    error:''
+
+14 企业合作的第三方登录
+sso/login?userid=812804713&openid=a0Dok56KisyT05K&phone=13301250582&email=1054770532@qq.com
+参数：
+	userid:用户id
+	openid:合作企业唯一标识
+	phone:电话
+	email:邮件
+返回值：
+	status:1成功  非1失败
+	error:成功或者失败的提示信息
+	sso_data:成功后返回的数据
+
+15 手机注册接口(打分在用)
+/register/phone_register?phone=13301250583&password=e0b0616098d16fec3de7b2f12b7ce519&user_type=2&register_type=2&app_name=daf&name=lala
+参数：
+	phone:手机号
+	password:加密后的密码
+	name:用户昵称
+	user_type:用户类型
+	register_type:注册类型（手机注册、邮箱注册...）
+	app_name:注册的app的名称
+返回值：
+	errorcode:true/false
+	response_status:ok/error
+	error:错误的信息
+	response_error_message:错误的信息
+	response_data:成功的话 done => 1
+
+16 二维码登录（打分在用）
+/sso/qrcode?session_id=856c2735ee884f0816d701487b78444035d3f428&app=5&qrtoken=k9SVlp6Ah43c2weuNX//Umy8S3WPh2LeT41z/NFjpB0HOk68VaMIqt7Gm73MJOyZicRjg3DbrLdm6PcTr0mC3tKDiHm4odE1HgLm7f/GKY38kJT+vdDEmk1l7J1VkBwb
+参数：
+	session_id：用户登录的sessionid
+	app：登录的app类别
+	qrtoken：二维码
+返回值：
+	errorcode:true/false
+	response_status:ok/error
+	response_error_code:返回的错误码 -1 -2 -3 -4 -5 1等等
+	response_error_message:错误的信息
+	error:错误的信息
+
+17 检测手机号是否存在（打分在用）
+/login/check_phone?phone=13301250583
+参数：
+	phone:要检测的手机号
+返回值：
+	errorcode：true/false
+	response_status：ok/error
+	error：错误的信息
+	response_error_message：错误的信息
+	response_data:正确的时候返回 done => 1
+
+18 找回密码（重置密码）(打分在用)
+/user/reset_password?phone=13301250288&password=321s3f4t43g21d35fg4rg1f354
+参数：
+	phone:手机号
+	password:加密的密码
+返回值：
+	errorcode：true/false
+	response_status：ok/error
+	error：错误的信息
+	response_error_message：错误的信息
+	response_data:正确的时候返回 done => 1
+
+
+
+
+
+
+
+
+
+

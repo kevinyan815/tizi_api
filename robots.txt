@@ -1,0 +1,6 @@
+user-agent: *
+Disallow: /404
+Disallow: /register
+Disallow: /login
+Disallow: /find_password
+Disallow: /about/agreements

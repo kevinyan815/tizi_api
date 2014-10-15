@@ -1,0 +1,16 @@
+/*加载重置样式------------*/
+@import url('../../lib/tizi_static/css/common/reset.css');
+/*加载公共样式*/
+@import url('../common/common.css');
+/*加载布局样式*/
+@import url('../common/layout.css');
+/*加载顶部样式*/
+@import url('../../lib/tizi_static/css/common/header.css');
+/*加载底部样式*/
+@import url('../../lib/tizi_static/css/common/footer.css');
+/*加载公共样式---button和其他*/
+@import url('../../lib/tizi_static/css/common/button.css');
+/*加载公共弹出框样式*/
+@import url('../../lib/tizi_static/css/common/dialog.css');
+/*加载公共验证样式*/
+@import url('../../lib/tizi_static/css/common/valid.css');
